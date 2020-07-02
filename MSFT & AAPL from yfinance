@@ -1,0 +1,10 @@
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+# Get data
+data = yf.download("MSFT AAPL", start="2019-01-01", end="2020-01-3",interval="1d", groupby="ticker")
+apple=data['Close']['AAPL']
+
+#Plot Data
+apple.dropna().plot(color='black',figsize=(8,5))
+plt.title('AAPL Close Price')
